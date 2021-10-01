@@ -41,6 +41,7 @@ class ConsumersStart extends Command
      * @var $kafka \Neverovsky\Kafka\Model\Kafka
      */
     private $kafka;
+    private $objectManager;
 
 
     /**
@@ -58,7 +59,8 @@ class ConsumersStart extends Command
         \Neverovsky\Kafka\Model\Consumers $consumers,
         \Neverovsky\Kafka\Helper\Data $helper,
         \Neverovsky\Kafka\Model\Kafka $kafka,
-        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
+        \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        \Magento\Framework\ObjectManagerInterface $objectManager
     ) {
         $this->appState = $appState;
         $this->processManager = $processManager;
@@ -66,6 +68,7 @@ class ConsumersStart extends Command
         $this->helper = $helper;
         $this->kafka = $kafka;
         $this->scopeConfig = $scopeConfig;
+        $this->objectManager = $objectManager;
         parent::__construct();
     }
 

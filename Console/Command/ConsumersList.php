@@ -13,15 +13,23 @@ class ConsumersList extends Command
      * @var \Magento\Framework\App\State
      */
     private $appState;
+    /**
+     * @var \Neverovsky\Kafka\Model\Consumers
+     */
+    private $consumers;
 
 
     /**
      * ConsumersList constructor.
      * @param \Magento\Framework\App\State $appState
      */
-    public function __construct(\Magento\Framework\App\State $appState)
+    public function __construct(
+        \Magento\Framework\App\State $appState,
+        \Neverovsky\Kafka\Model\Consumers $consumers
+    )
     {
         $this->appState = $appState;
+        $this->consumers = $consumers;
         parent::__construct();
     }
 
@@ -33,12 +41,7 @@ class ConsumersList extends Command
         OutputInterface $output
     )
     {
-        /**
-         * @var \Neverovsky\Kafka\Model\Consumers $consumers
-         */
-        $consumers = $this->objectManager->get('\Neverovsky\Kafka\Model\Consumers');
-
-        foreach ($consumers->getList() as $name => $options) {
+        foreach ($this->consumers->getList() as $name => $options) {
             $output->writeln('['.$options['topic'].'] '.$name . " | " . $options['class'] . ':' . $options['action'] . "()");
         }
     }
