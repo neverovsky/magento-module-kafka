@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="neverovsky">
+            <label>Neverovsky</label>
+        </tab>
+        <section id="kafka" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <label>Модуль работы с Apache Kafka</label>
+            <tab>neverovsky</tab>
+            <resource>Neverovsky_Kafka::config_neverovsky_kafka</resource>
+            <group id="connection" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Настройки соединения</label>
+                <field id="enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label"
+                       type="select">
+                    <label>Включен</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="schema_registry_host" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10"
+                       translate="label comment">
+                    <label>Хост:порт SchemaRegistry</label>
+                    <comment>Например localhost:8081</comment>
+                </field>
+                <field id="broker_host" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10"
+                       translate="label comment">
+                    <label>Хост:порт брокера Apache Kafka</label>
+                    <comment>Например localhost:9092</comment>
+                </field>
+            </group>
+            <group id="consumers" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+                <label>Настройки слушателей</label>
+                <field id="cron_enabled" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10"
+                       translate="label comment"
+                       type="select">
+                    <label>Запуск по крону</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Если выключен то только вручную или отдельным инстасем в кубернетес/ранчере</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

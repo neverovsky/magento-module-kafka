@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="consumers_list" xsi:type="object">Neverovsky\Kafka\Console\Command\ConsumersList</item>
+				<item name="consumers_start" xsi:type="object">Neverovsky\Kafka\Console\Command\ConsumersStart</item>
+			</argument>
+		</arguments>
+	</type>
+	<type name="Neverovsky\Kafka\Cron\ConsumersRunner">
+		<arguments>
+			<argument name="shellBackground" xsi:type="object">shellBackground</argument>
+		</arguments>
+	</type>
+
+</config>

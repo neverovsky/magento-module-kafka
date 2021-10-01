@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="neverovsky_kafka_list_consumers_before">
+        <observer name="neverovsky_kafka_example_list_consumers_before" instance="Neverovsky\Kafka\Consumers\Example"/>
+    </event>
+</config>

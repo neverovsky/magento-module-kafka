@@ -1,0 +1,10 @@
+"Модуль работы с Apache Kafka","Module for Apache Kafka"
+"Настройки соединения","Connection settings"
+Включен,Enabled
+"Хост:порт SchemaRegistry","Hostname:port SchemaRegistry"
+"Например localhost:8081","For example localhost:8081"
+"Хост:порт брокера Apache Kafka","Hostname:port брокера Apache Kafka"
+"Например localhost:9092","For example localhost:9092"
+"Настройки слушателей","Consumer configuration"
+"Запуск по крону","Run by cron"
+"Если выключен то только вручную или отдельным инстасем в кубернетес/ранчере","If enabled, only manually execution"

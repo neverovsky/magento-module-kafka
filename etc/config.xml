@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <kafka>
+            <connection>
+                <enabled>0</enabled>
+            </connection>
+            <consumers>
+                <cron_enabled>0</cron_enabled>
+            </consumers>
+        </kafka>
+    </default>
+</config>
