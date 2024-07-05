@@ -15,7 +15,7 @@ Commands:
 --
 php bin/magento neverovsky_kafka:consumers:list - List of consumers.
 
-php bin/magento neverovsky_kafka:consumers:start имя_слушателя - Start a consumer manually.
+php bin/magento neverovsky_kafka:consumers:start listener_name - Start a consumer manually.
 
 Consumers are automatically started by cron if enabled in the module settings.
 
